@@ -2,6 +2,11 @@ package main
 
 func main()  {
 	cards := newDeck()
+
+	// hand, remainingCards := deal(cards, 5)
 	
-	cards.print()
+	// println(cards.toString())
+	// hand.print()
+	// remainingCards.print()
+	cards.saveToFile("my_cards.txt")
 }
