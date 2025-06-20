@@ -61,3 +61,17 @@ func (d deck) shuffle() {
 		d[i], d[newIndex] = d[newIndex], d[i]
 	}
 }
+
+func (d deck) Equals(otherDeck deck) bool {
+	if len(d) != len(otherDeck) {
+		return false
+	}
+
+	for i, card := range d {
+		if card != otherDeck[i] {
+			return false
+		}
+	}
+
+	return true
+}
