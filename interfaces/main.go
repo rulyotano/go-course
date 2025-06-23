@@ -6,6 +6,14 @@ type bot interface {
 	GetGreeting() string
 }
 
+func main()  {
+	englishBot := englishBot{}
+	spanishBot := spanishBot{}
+
+	printGreeting(englishBot)
+	printGreeting(spanishBot)
+}
+
 func (e englishBot) GetGreeting() string {
 	return "Hello, World!"
 }
@@ -16,13 +24,5 @@ func (s spanishBot) GetGreeting() string {
 
 func printGreeting(b bot) {
 	println(b.GetGreeting())
-}
-
-func main()  {
-	englishBot := englishBot{}
-	spanishBot := spanishBot{}
-
-	printGreeting(englishBot)
-	printGreeting(spanishBot) // This will cause a compile-time error since printGreeting expects an EnglishBot	
 }
 
