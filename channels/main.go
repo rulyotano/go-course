@@ -28,10 +28,10 @@ func CheckSites(links []string) {
 	}
 
 	for l := range c {
-		go func() {
+		go func(link string) {
 			time.Sleep(5 * time.Second)
-			CheckLink(l, c)
-		}()
+			CheckLink(link, c)
+		}(l)
 	}
 }
 
